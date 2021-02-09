@@ -1,10 +1,18 @@
 {
-  "name": "codemix/yii2-localeurls",
+  "name": "ostendisorg/yii2-localeurls",
   "description": "Automatic locale/language management for URLs.",
-  "keywords": ["yii2", "i18n", "locale"],
+  "keywords": [
+    "yii2",
+    "i18n",
+    "locale"
+  ],
   "type": "yii2-extension",
   "license": "MIT",
   "authors": [
+    {
+      "name": "Daniel Nüssli",
+      "email": "daniel.nuessli@ostendis.com"
+    },
     {
       "name": "Michael Härtl",
       "email": "haertl.mike@gmail.com"
@@ -24,7 +32,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "codemix\\localeurls\\": ""
+      "ostendisorg\\localeurls\\": ""
     }
   },
   "autoload-dev": {

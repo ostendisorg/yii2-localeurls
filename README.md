@@ -1,17 +1,7 @@
 Yii2 Locale URLs
 ================
 
-[![Build Status](https://secure.travis-ci.org/codemix/yii2-localeurls.png)](http://travis-ci.org/codemix/yii2-localeurls)
-[![Latest Stable Version](https://poser.pugx.org/codemix/yii2-localeurls/v/stable.svg)](https://packagist.org/packages/codemix/yii2-localeurls)
-[![Total Downloads](https://poser.pugx.org/codemix/yii2-localeurls/downloads)](https://packagist.org/packages/codemix/yii2-localeurls)
-[![Latest Unstable Version](https://poser.pugx.org/codemix/yii2-localeurls/v/unstable.svg)](https://packagist.org/packages/codemix/yii2-localeurls)
-[![License](https://poser.pugx.org/codemix/yii2-localeurls/license.svg)](https://packagist.org/packages/codemix/yii2-localeurls)
-
-
 Automatic locale/language management through URLs for Yii 2.
-
-> **IMPORTANT:** If you upgraded from version 1.0.* you have to modify your configuration.
-> Please check the section on [Upgrading](#upgrading) below.
 
 ## Features
 
@@ -45,7 +35,7 @@ All the above (and more) is configurable of course.
 
 Install the package through [composer](http://getcomposer.org):
 
-    composer require codemix/yii2-localeurls
+    composer require ostendisorg/yii2-localeurls
 
 And then add this to your application configuration:
 
@@ -60,7 +50,7 @@ return [
 
         // Override the urlManager component
         'urlManager' => [
-            'class' => 'codemix\localeurls\UrlManager',
+            'class' => 'ostendisorg\localeurls\UrlManager',
 
             // List all supported languages here
             // Make sure, you include your app's default language.
@@ -261,7 +251,7 @@ how this can be used to track user languages in the database:
 <?php
 
 'urlManager' => [
-    'class' => 'codemix\localeurls\UrlManager',
+    'class' => 'ostendisorg\localeurls\UrlManager',
     'languages' => ['en', 'fr', 'de'],
     'on languageChanged' => `\app\components\User::onLanguageChanged',
 ]
@@ -442,51 +432,7 @@ class LanguageDropdown extends Dropdown
 }
 ```
 
-## Upgrading
-
-### Changes from 1.0.* to 1.1.*
-
-If you upgrade from a 1.0.* version you'll have to modify your configuration. There no
-longer is a `localeUrls` component now. Instead everything was merged into our custom
-`urlManager` component. So you should move any configuration for the `localeUrls` component
-into the `urlManager` component.
-
-Two options also have been renamed for more clarity:
-
- * `enableDefaultSuffix` is now `enableDefaultLanguageUrlCode`
- * `enablePersistence` is now `enableLanguagePersistence`
-
-So if your configuration looked like this before:
-
-```php
-<?php
-return [
-    'bootstrap' => ['localeUrls'],
-    'components' => [
-        'localeUrls' => [
-            'languages' => ['en-US', 'en', 'fr', 'de', 'es-*'],
-            'enableDefaultSuffix' => true,
-            'enablePersistence' => false,
-        ],
-        'urlManager' => [
-            'class' => 'codemix\localeurls\UrlManager',
-        ]
-    ]
-];
-```
-
-you should now change it to:
-
-```php
-<?php
-return [
-    'components' => [
-        'urlManager' => [
-            'class' => 'codemix\localeurls\UrlManager',
-            'languages' => ['en-US', 'en', 'fr', 'de', 'es-*'],
-            'enableDefaultLanguageUrlCode' => true,
-            'enableLanguagePersistence' => false,
-        ]
-    ]
-];
-```
+License
+-----
+This package is published under the MIT License and can be used for any 
+commercial and personal projects.
