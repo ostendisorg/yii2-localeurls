@@ -141,7 +141,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
                     'hostInfo' => 'http://localhost',
                 ],
                 'urlManager' => ArrayHelper::merge([
-                    'class' => 'codemix\localeurls\UrlManager',
+                    'class' => 'ostendisorg\localeurls\UrlManager',
                     'showScriptName' => $this->showScriptName,
                 ], $this->urlManager),
             ],

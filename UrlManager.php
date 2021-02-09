@@ -1,5 +1,5 @@
 <?php
-namespace codemix\localeurls;
+namespace ostendisorg\localeurls;
 
 defined('YII2_LOCALEURLS_TEST') || define('YII2_LOCALEURLS_TEST', false);
 

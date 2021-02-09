@@ -1,5 +1,5 @@
 <?php
-namespace codemix\localeurls;
+namespace ostendisorg\localeurls;
 
 use yii\base\Event;
 
